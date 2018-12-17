@@ -9,6 +9,7 @@ stages {
      def javaHome = tool 'JAVA_1.8'*/
      sh 'apt-get install -y default-jdk'
      sh 'sudo apt install -y maven'
+   
      }
     }
    }
