@@ -27,8 +27,10 @@ stages {
   stage('docker image code') { 
  steps {
   script {
-        sh 'docker build -t ayyappanpads/jenkins17dec1 .'
-        sh 'docker run -p 3002:8080 -d ayyappanpads/jenkins17dec1 -v /var/run/docker.sock:/var/run/docker.sock jenkins-docker'
+        sh 'docker build -t .'
+        sh 'docker run -p 3002:8080 -d ayyappanpads/17jenkinsapp -v /var/run/docker.sock:/var/run/docker.sock jenkins-docker'
+        sh 'docker login --username=ayyappanpads --password=$env.password'
+        sh 'docker push ayyappanpads/17jenkinsapp'
     }
   }
  }
