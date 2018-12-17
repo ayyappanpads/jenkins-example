@@ -5,7 +5,6 @@ pipeline {
          stage('build customer app code') { 
  steps {
   script {
-        def mvnHome = tool 'maven-3'
         sh 'mvn clean install'
     }
   }
