@@ -1,7 +1,8 @@
 pipeline {
     agent any
-    
- stage('build customer app code') { 
+  
+    stages {
+         stage('build customer app code') { 
  steps {
   script {
         def mvnHome = tool 'maven-3'
@@ -10,7 +11,7 @@ pipeline {
   }
  }
     
-    stages {
+        
         stage ('Compile Stage') {
 
             steps {
